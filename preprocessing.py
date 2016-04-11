@@ -10,7 +10,7 @@ class MRPreprocessing(MRJob):
         output = {}
 
         output['text'] = obj['text']
-        output['useful'] = obj['votes']['useful'] > 0
+        output['useful'] = obj['votes']['useful'] >= 50
 
         yield ('', output)
 
