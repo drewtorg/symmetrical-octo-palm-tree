@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="form-group">
+    <form action="/" method="post">
+        <textarea class="form-control" name="review" rows="10" cols="50" placeholder="Enter review here...">{{review}}</textarea>
+        <br/>
+        <input class ="btn btn-primary" type="submit" value="Submit"/>
+    </form>
+</div>
+{% if useful == "True" %}
+  <p>Your review is fantastic. Go ahead and post it.</p>
+{% elif useful == "False" %}
+  <p>Your review is so-so, try improving it.<p>
+{% endif %}
+{% endblock %}

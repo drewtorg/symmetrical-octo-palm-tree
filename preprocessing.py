@@ -10,7 +10,7 @@ class MRPreprocessing(MRJob):
         output = {}
 
         output['text'] = obj['text']
-        output['useful'] = obj['votes']['useful'] >= 50
+        output['useful'] = obj['votes']['useful'] >= 30
 
         yield ('', output)
 
@@ -30,4 +30,4 @@ def make_json(filename):
 
 if __name__ == '__main__':
     MRPreprocessing.run()
-    make_json('output.txt')
+    make_json('output_30.txt')
